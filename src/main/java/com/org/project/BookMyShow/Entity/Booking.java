@@ -25,6 +25,8 @@ public class Booking
 	private String bookingDate;
 	private String bookingTime;
 	
+	private ClassType classtype;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Shows shows;
 

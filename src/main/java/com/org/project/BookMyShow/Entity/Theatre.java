@@ -1,5 +1,7 @@
 package com.org.project.BookMyShow.Entity;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.CascadeType;
@@ -26,5 +28,5 @@ public class Theatre
 	private int noOfScreen;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	private Screen screen;
+	private List<Screen> screen;
 }

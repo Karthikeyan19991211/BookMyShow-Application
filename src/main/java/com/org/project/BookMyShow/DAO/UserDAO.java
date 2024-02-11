@@ -1,5 +1,6 @@
 package com.org.project.BookMyShow.DAO;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,11 @@ public class UserDAO {
 			return repo.save(user);
 		}
 		return null;
+	}
+	
+	public List<User> findAllUser()
+	{
+		return repo.findAll();
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.org.project.BookMyShow.Entity;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.CascadeType;
@@ -28,6 +30,6 @@ public class Admin
 	private String adminPassword;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	private Theatre theatre;	
+	private List<Theatre> theatre;	
 
 }

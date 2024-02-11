@@ -1,5 +1,6 @@
 package com.org.project.BookMyShow.DAO;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +63,11 @@ public class BookingDAO {
 			return repo.save(booking);
 		}
 		return null;
+	}
+	
+	public List<Booking> findAllBookings()
+	{
+		return repo.findAll();
 	}
 
 }
