@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.org.project.BookMyShow.Entity.Admin;
 import com.org.project.BookMyShow.Repo.AdminRepo;
 
+
 @Repository
 public class AdminDAO {
 
@@ -72,6 +73,11 @@ public class AdminDAO {
 	public List<Admin> findAllAdmin()
 	{
 		return repo.findAll();
+	}
+	
+	public Admin findByEmail(String adminEmail)
+	{
+		return repo.findByEmail(adminEmail);
 	}
 
 }

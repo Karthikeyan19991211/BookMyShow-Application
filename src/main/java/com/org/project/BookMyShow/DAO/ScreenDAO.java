@@ -46,14 +46,14 @@ public class ScreenDAO {
 			if (screen.getScreenName() == null) {
 				screen.setScreenName(exScreen.getScreenName());
 			}
-			if (screen.getScreenSize() == 0.0) {
+			if (screen.getScreenSize() == null) {
 				screen.setScreenSize(exScreen.getScreenSize());
 			}
 			if (screen.getScreenType() == null) {
 				screen.setScreenType(exScreen.getScreenType());
 			}
-			if (screen.getNoOfCharCount() == 0) {
-				screen.setNoOfCharCount(exScreen.getNoOfCharCount());
+			if (screen.getTotalSeats() == 0) {
+				screen.setTotalSeats(exScreen.getTotalSeats());
 			}
 
 			return repo.save(screen);

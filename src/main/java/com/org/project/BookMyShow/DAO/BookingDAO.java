@@ -1,5 +1,8 @@
 package com.org.project.BookMyShow.DAO;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +18,13 @@ public class BookingDAO {
 	BookingRepo repo;
 
 	public Booking saveBooking(Booking booking) {
+		
+		LocalDate cur = LocalDate.now();
+		booking.setBookingDate(cur);
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
+		booking.setBookingTime(sdf.format(new Date()));
+		
 		return repo.save(booking);
 	}
 
@@ -51,15 +61,17 @@ public class BookingDAO {
 			if (booking.getBookingAmount() == 0.0) {
 				booking.setBookingAmount(exBooking.getBookingAmount());
 			}
-
-			if (booking.getBookingDate() == null) {
+			
+			if(booking.getBookingDate() == null)
+			{
 				booking.setBookingDate(exBooking.getBookingDate());
 			}
-
-			if (booking.getBookingTime() == null) {
+			
+			if(booking.getBookingTime() == null)
+			{
 				booking.setBookingTime(exBooking.getBookingTime());
 			}
-
+			
 			return repo.save(booking);
 		}
 		return null;

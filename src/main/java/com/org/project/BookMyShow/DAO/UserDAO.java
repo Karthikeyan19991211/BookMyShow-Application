@@ -62,5 +62,10 @@ public class UserDAO {
 	{
 		return repo.findAll();
 	}
+	
+	public User findByEmail(String userEmail,String userPassword)
+	{
+		return repo.findByEmail(userEmail, userPassword);
+	}
 
 }
